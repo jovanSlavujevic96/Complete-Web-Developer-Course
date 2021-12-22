@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07.Positioning</title>
+    <style type="text/css">
+        #first-section{
+            color:#4385F4;
+            background-color: #76D7C4;
+            width: 200px;
+            left: 100px; /* have left margin 100px -> MOVES IT RIGHT */
+            top : 100px; /* have top  margin 100px -> MOVES IT DOWN  */
+            /* z-index: 1;  overlapping elements priority -> WHICH WILL BE ON FRONT */
+        }
+        #second-section{
+            background-color: #A3BEE4;
+            width:  200px;
+            height: 400px;
+            position: relative;
+            /* z-index: 2; biggest number is on front */
+            opacity: 1;
+        }
+        #third-section{
+            color:#4385F4;
+            background-color: #76D7C4;
+            width: 200px;
+            position: absolute;
+            left: 500px;
+            top: 200px;
+        }
+        #fourth-section{
+            background-color: purple;
+            width: 200px;
+            position: fixed; /* fixed during scrolling through page */
+            left: 500px; /* have left margin 100px -> MOVES IT RIGHT */
+            top:  000px;
+        }
+        #fifth-section{
+            color:orange;
+            background-color: yellow;
+            width: 200px;
+            position: sticky;
+            left: 250px;
+            top: 20px;
+        }
+        #sixth-section{
+            color:palegoldenrod;
+            background-color: plum;
+            width: 100px;
+            position: static; /* default value for element in CSS */
+            /* left/right & top/bottom properties are not working with static positioning */
+            /* can be used to remove some other positioning */
+        }
+        .red{
+            color: red;
+        }
+        #green{
+            color:green;
+        }
+        .blue {
+            color:blue;
+        }
+        .underlined{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div id="first-section">
+        <p>The quick brown fox jumped over the lazy dog.</p>
+        <p>Wow, I love internal CSS!</p>
+    </div>
+
+    <div id="fifth-section">
+        <p>This is fixed placed text.</span></p>
+    </div>
+
+    <div id="sixth-section">
+        <p>This is static placed text.</span></p>
+    </div>
+
+    <div id="second-section">
+        <p id="green">This is <span class="underlined">underlined</span> and relative placed text</p>
+        <h1 class="red">CSS is cool!</h1>
+    </div>
+
+    <div id="third-section">
+        <p class="blue">This is absolute placed text.</p>
+    </div>
+
+    <div id="fourth-section">
+        <p class="blue">This is fixed placed text.</p>
+    </div>
+
+</body>
+</html>
