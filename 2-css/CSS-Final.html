@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technology - BBC News</title>
+
+    <style type="text/css">
+
+        /* default rules */
+        body {
+            margin:  0;
+            padding: 0;
+
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        a {
+            color:black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* class for clearing rules from previous section(s) */
+        .clear {
+            clear:both;
+        }
+
+        /* rules for specific elements */
+
+        /* topbar (first section) rules */
+        #topbar {
+            width:1200px;
+            height: 40px;
+
+            margin:0 auto; /* workaround to set logo to center */
+        }
+
+        .topbar-section {
+            height: 100%;
+
+            float:left;
+            border-left: 2px #CCCCCC solid;
+        }
+
+        .topbar-section-text {
+            font-weight: bold;
+            font-size: 90%;
+
+            position: relative;
+            top: 12px;
+        }
+
+        #bbc-logo {
+            cursor: pointer;
+        }
+
+        #bbc-logo-image {
+            width: 75px;
+
+            margin:10px;
+            float:left;
+        }
+
+        #sign-in {
+            width: 175px;
+            height: 100%;
+        }
+
+        #sign-in:hover {
+            border-bottom: 4px blue solid;
+        }
+
+        #sign-in-image {
+            width: 25px;
+
+            float:left;
+            margin:8px 8px 8px 10px;
+        }
+
+        #home {
+            width: 64px;
+            height: 100%;
+        }
+
+        #home:hover {
+            border-bottom: 4px black solid;
+        }
+
+        #news {
+            width: 64px;
+            height: 100%;
+        }
+
+        #news:hover {
+            border-bottom: 4px red solid;
+        }
+
+        #sport {
+            width: 64px;
+            height: 100%;
+        }
+
+        #sport:hover {
+            border-bottom: 4px yellow solid;
+        }
+
+        #reel {
+            width: 64px;
+            height: 100%;
+        }
+
+        #reel:hover {
+            border-bottom: 4px blue solid;
+        }
+
+        #worklife {
+            width: 80px;
+            height: 100%;
+        }
+
+        #worklife:hover {
+            border-bottom: 4px lightblue solid;
+        }
+
+        #travel {
+            width: 64px;
+            height: 100%;
+        }
+
+        #travel:hover {
+            border-bottom: 4px green solid;
+        }
+
+        #more {
+            width: 100px;
+            height: 100%;
+        }
+
+        #more:hover {
+            border-bottom: 4px black solid;
+        }
+
+        #more-black-image {
+            width: 15px;
+
+            float:left;
+            margin:10px 8px 8px 42px;
+        }
+
+        #search-box {
+            padding: 5px 0px 5px 5px;
+            margin:  10px 0px 5px 10px;
+
+            background-color: #E4E4E4;
+            border: none;
+
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        #search-image {
+            margin-top:10px;
+            height:65.5%;
+        }
+
+        /* red bar (second section) rules */
+
+    </style>
+</head>
+<body>
+    <div id="topbar">
+        <a id="bbc-logo" href="https://bbc.com" target="_blank">
+            <img id="bbc-logo-image" src="final_img/bbc-logo.png" alt="bbc-logo">
+        </a>
+
+        <a id="sign-in" class="topbar-section" href="https://account.bbc.com/signin" target="_blank">
+            <img id="sign-in-image" src="final_img/signin-sign.png" alt="sign-in-symbol">
+            <span class="topbar-section-text">Sign in</span>
+        </a>
+
+        <a id="home" class="topbar-section" href="https://bbc.com" target="_blank">
+            <span class="topbar-section-text" style="left:12px">Home</span>
+        </a>
+
+        <a id="news" class="topbar-section" href="https://bbc.com/news" target="_blank">
+            <span class="topbar-section-text" style="left:12px">News</span>
+        </a>
+
+        <a id="sport" class="topbar-section" href="https://bbc.com/sport" target="_blank">
+            <span class="topbar-section-text" style="left:11px">Sport</span>
+        </a>
+
+        <a id="reel" class="topbar-section" href="https://bbc.com/reel" target="_blank">
+            <span class="topbar-section-text" style="left:16px">Reel</span>
+        </a>
+
+        <a id="worklife" class="topbar-section" href="https://bbc.com/worklife" target="_blank">
+            <span class="topbar-section-text" style="left:12px">Worklife</span>
+        </a>
+
+        <a id="travel" class="topbar-section" href="https://bbc.com/travel" target="_blank">
+            <span class="topbar-section-text" style="left:11px">Travel</span>
+        </a>
+
+        <a id="more" class="topbar-section">
+            <span class="topbar-section-text" style="left:14px;float:left">More</span>
+            <img id="more-black-image" src="final_img/more-black-arrow.jpg" alt="more-black-symbol">
+        </a>
+
+        <div class="topbar-section">
+            <input id="search-box"   type="text"  name="search-box" placeholder="Search" style="float:left">
+            <input id="search-image" type="image" name="search-symbol" src="final_img/search-sign.png" alt="search-symbol" style="float:left">
+        </div>
+    </div>
+
+    <!-- CLEAR FLOATING & OTHER RULES -->
+    <div class="clear"></div>
+
+</body>
+</html>
