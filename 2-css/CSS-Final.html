@@ -8,7 +8,9 @@
 
     <style type="text/css">
 
+        /*****************/
         /* default rules */
+        /*****************/
         body {
             margin:  0;
             padding: 0;
@@ -22,14 +24,33 @@
             cursor: pointer;
         }
 
-        /* class for clearing rules from previous section(s) */
+        p {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 5px;
+        }
+
+        /****************************/
+        /*  class for common rules  */
+        /****************************/
         .clear {
             clear:both;
         }
 
+        .no-borders {
+            border: none !important;
+            /* important overrides other targeting rules */
+        }
+
+        .no-right-border {
+            border-right: none !important;
+        }
+
         /* rules for specific elements */
 
-        /* topbar (first section) rules */
+        /**********************************/
+        /*  topbar (first section) rules  */
+        /**********************************/
         #topbar {
             width:1200px;
             height: 40px;
@@ -59,7 +80,7 @@
         #bbc-logo-image {
             width: 75px;
 
-            margin:10px;
+            margin:10px 10px 0 10px;
             float:left;
         }
 
@@ -69,7 +90,7 @@
         }
 
         #sign-in:hover {
-            border-bottom: 4px blue solid;
+            box-shadow: 0px -3px 0px blue inset; /* workaround for inner border */
         }
 
         #sign-in-image {
@@ -85,7 +106,7 @@
         }
 
         #home:hover {
-            border-bottom: 4px black solid;
+            box-shadow: 0px -3px 0px black inset; 
         }
 
         #news {
@@ -94,7 +115,7 @@
         }
 
         #news:hover {
-            border-bottom: 4px red solid;
+            box-shadow: 0px -3px 0px red inset; 
         }
 
         #sport {
@@ -103,7 +124,7 @@
         }
 
         #sport:hover {
-            border-bottom: 4px yellow solid;
+            box-shadow: 0px -3px 0px orange inset;
         }
 
         #reel {
@@ -112,7 +133,7 @@
         }
 
         #reel:hover {
-            border-bottom: 4px blue solid;
+            box-shadow: 0px -3px 0px blue inset;
         }
 
         #worklife {
@@ -121,7 +142,7 @@
         }
 
         #worklife:hover {
-            border-bottom: 4px lightblue solid;
+            box-shadow: 0px -3px 0px lightblue inset;
         }
 
         #travel {
@@ -130,7 +151,7 @@
         }
 
         #travel:hover {
-            border-bottom: 4px green solid;
+            box-shadow: 0px -3px 0px green inset;
         }
 
         #more {
@@ -139,7 +160,7 @@
         }
 
         #more:hover {
-            border-bottom: 4px black solid;
+            box-shadow: 0px -3px 0px black inset;
         }
 
         #more-black-image {
@@ -165,11 +186,208 @@
             height:65.5%;
         }
 
+        /**********************************/
         /* red bar (second section) rules */
+        /**********************************/
+        #menu-bar-container {
+            border-top: 1px solid #CCCCCC;
+            background-color: #D94234;
+            width: 100%;
+            height: 70px;   
+        }
+
+        #menu-bar {
+            width:1200px;
+
+            margin:0 auto; /* workaround to set logo to center */
+        }
+
+        #news-header { /* only one header -> NEWS */
+            padding:0;
+            margin:0;
+            color:white;
+            font-size: 40px;
+            font-weight: normal;
+            padding-top: 10px;
+            margin-left: 6px;
+
+            float:left;
+        }
+
+        #local-news {
+            float:right;
+
+            border: 2px grey solid;
+            width: 220px;
+            padding: 5px 5px 0px 10px;
+            margin: 7px 180px 0 0;
+        }
+
+        #local-news:hover {
+            border: 2px white solid;
+            cursor: pointer;
+        }
+
+        /* all links within local-news id */
+        #local-news a {
+            color:white; /* text color */
+            text-decoration: none;
+            font-size: 26px;
+            position: relative;
+            bottom: 12px;
+        }
+
+        /* when hovers to local news -> do with links */ 
+        #local-news:hover a {
+            text-decoration: underline;
+        }
+
+        /* all images within local-news id */
+        #local-news img {
+            height: 40px;
+            position: relative;
+            left: 5px;
+        }
+
+        /**************************************/
+        /* dark red bar (third section) rules */
+        /**************************************/
+        #menu-bar-2-container {
+            background-color: #BB1919;
+            width: 100%;
+        }
+
+        #menu-bar-2 {
+            width: 1200px;
+            margin: 0 auto; /* center */
+            height: 40px;
+        }
+
+        #menu-bar-2 a {
+            height: 20px;
+            float: left;
+            color: white;
+            text-decoration: none;
+            padding: 0 10px;
+            border-right: 1px solid white;
+            font-size: 17px;
+            position: relative;
+            top: 10px;
+        }
+
+        #menu-bar-2 a:hover {
+            border-bottom: 5px solid white;
+        }
+
+        #more-2 {
+            width: 50px;
+            height: 100%;
+        }
+
+        #more-2 span {
+            padding-top: 0;
+            float: left;
+
+            position: relative;
+            left: -3px;
+        }
+
+        #more-2 img {
+            padding-top: 0;
+            width: 13px;
+            float: right;
+
+            position: relative;
+            left: 5px;
+            bottom: 14px;
+        }
+
+        /*******************/
+        /*   main article  */
+        /*******************/
+        #page-container {
+            width: 1200px;
+            margin: 0 auto;
+        }
+
+        #section-title {
+            font-weight: normal;
+            font-size: 20px;
+            color: black;
+
+            width: 105px;
+            border-bottom: 4px solid #A91717;
+            cursor: pointer;
+        }
+
+        #article-title {
+            font-weight: bold;
+            font-size: 30px;
+            color: #5A5A5A;
+
+            width: 505px;
+        }
+
+        #article-title:hover {
+            color: #1167A8;
+            cursor: pointer;
+        }
+
+        #article-container {
+            float:left;
+            width: 670px;
+
+            border-right: 1px solid #CCCCCC;
+        }
+
+        #article-summary {
+            color: #5A5A5A;
+            width: 230px;
+            text-align: justify;
+            float: left;
+        }
+
+        #article-summary img {
+            width: 15px;
+            float: left;
+        }
+
+        #article-summary span {
+            float:right;
+            font-size: 15px;
+            color: #5A5A5A;
+        }
+
+        #topic-link {
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+            color: #A91717;
+        }
+
+        #article-summary a:hover {
+            color: #1167A8;
+        }
+
+        #main-article-image {
+            float: left;
+            width: 400px;
+            margin-left: 20px;
+        }
+
+        .article-link {
+            color:black;
+            text-decoration: none;
+            font-weight: normal;
+            font-size: 15px;
+        }
 
     </style>
 </head>
 <body>
+    <!---------------------------->
+    <!-- TOPBAR - FIRST SECTION -->
+    <!---------------------------->
     <div id="topbar">
         <a id="bbc-logo" href="https://bbc.com" target="_blank">
             <img id="bbc-logo-image" src="final_img/bbc-logo.png" alt="bbc-logo">
@@ -218,5 +436,94 @@
     <!-- CLEAR FLOATING & OTHER RULES -->
     <div class="clear"></div>
 
+    <!------------------------------->
+    <!-- MENU BAR - SECOND SECTION -->
+    <!------------------------------->
+    <div id="menu-bar-container">
+        <div id="menu-bar">
+            <a href="https://bbc.com/news" target="_blank">
+                <h1 id="news-header">NEWS</h1>
+            </a>
+
+            <div id="local-news">
+                <a href="https://bbc.com/news/localnews" target="_blank">Find local news</a>
+                <img src="final_img/location-symbol.png" alt="location-symbol">
+            </div>
+        </div>
+    </div>
+
+    <!-- CLEAR FLOATING & OTHER RULES -->
+    <div class="clear"></div>
+
+    <!--------------------------------->
+    <!-- SUBMENU BAR - THIRD SECTION -->
+    <!--------------------------------->
+    <div id="menu-bar-2-container">
+        <div id="menu-bar-2">
+            <a href="https://bbc.com/news"  target="_blank">Home</a>
+
+            <a href="https://bbc.com/news/uk" target="_blank">UK</a>
+
+            <a href="https://bbc.com/news/world" target="_blank">Wolrd</a>
+
+            <a href="https://bbc.com/news/business" target="_blank">Bussines</a>
+
+            <a href="https://bbc.com/news/politics" target="_blank">Politics</a>
+
+            <a href="https://bbc.com/news/technology" target="_blank">Tech</a>
+
+            <a href="https://bbc.com/news/science" target="_blank">Science</a>
+
+            <a href="https://bbc.com/news/health" target="_blank">Health</a>
+
+            <a href="https://bbc.com/news/education" target="_blank">Education</a>
+
+            <a href="https://bbc.com/news/entertainment_and_arts" target="_blank">Entertainment & Arts</a>
+
+            <a href="https://www.bbc.com/news/video_and_audio" target="_blank">Video & Audio</a>
+
+            <a href="" id="more-2" class="no-right-border">
+                <span>More</span>
+                <img src="final_img/more-white-arrow.png" alt="more-white-symbol">
+            </a>
+        </div>
+    </div>
+
+    <!-- CLEAR FLOATING & OTHER RULES -->
+    <div class="clear"></div>
+
+    <!-------------------->
+    <!--  MAIN ARTICLE  -->
+    <!-------------------->
+    <div id="page-container">
+        <h2 id="section-title">Technology</h2>
+
+        <div id="article-container">
+            <h1 id="article-title">Asda bug exposed payment details</h1>
+            
+            <div id="article-summary">
+                <p>
+                    Security vulnerabilities that put customers at risk have affected Asda's website
+                    for a couple of years, a security expret has revealed.
+                </p>
+                <p style="padding-bottom: 20px; padding-top:5px">
+                    <img src="final_img/clock-symbol.png" alt="clock-symbol">
+                    <span>
+                        19 January 2016 | 
+                        <a href="" id="topic-link">Technology</a>
+                    </span>
+                </p>
+                
+                <hr align="left" color="#A91717" width="100px">
+
+                <p><a class="article-link" href="">Surveillance firm hit in hack attack</a></p>
+
+                <p><a class="article-link" href="">eBay flaw has existed for months</a></p>
+            </div>
+
+            <img id="main-article-image" src="final_img/main-article-cover-ASDA.png" alt="ASDA">
+        </div>
+    </div>
+        
 </body>
 </html>
