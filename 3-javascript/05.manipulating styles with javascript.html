@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05.Manipulating Style with Javascript</title>
+</head>
+<body>
+    <p id="moreText">This is some text</p>
+
+    <button id="styleText">Style Text</button>
+
+    <script type="text/javascript">
+        document.getElementById("styleText").onclick = function() {
+            // add somes style to paragraph
+            var p_moretxt = document.getElementById("moreText");
+            /*
+            p_moretxt.style.color = "red";       // set text color 
+            p_moretxt.style.fontSize = "50px";   // set font size
+            p_moretxt.style.fontWeight = 'bold'; // set font weight
+            */
+            p_moretxt.style.display = "none";    // make text invisible
+        }
+    </script>
+</body>
+</html>

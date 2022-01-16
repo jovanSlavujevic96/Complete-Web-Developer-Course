@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technology - BBC News</title>
 
+    <!--            Way how to link external CSS                 -->
+    <!-- <link rel="stylesheet" type="text/css" href="fajl.css"> -->
+
     <style type="text/css">
 
         /*****************/
@@ -302,14 +305,18 @@
             bottom: 14px;
         }
 
-        /*******************/
-        /*   main article  */
-        /*******************/
+        /*****************************************/
+        /*             !!  PAGE  !!              */
+        /* contains: main article + watch/listen */
+        /*****************************************/
         #page-container {
             width: 1200px;
             margin: 0 auto;
         }
 
+        /*******************/
+        /*   main article  */
+        /*******************/
         #section-title {
             font-weight: normal;
             font-size: 20px;
@@ -348,11 +355,13 @@
         }
 
         #article-summary img {
+            /* related to clock */
             width: 15px;
             float: left;
         }
 
         #article-summary span {
+            /* related to date */
             float:right;
             font-size: 15px;
             color: #5A5A5A;
@@ -380,6 +389,49 @@
             text-decoration: none;
             font-weight: normal;
             font-size: 15px;
+        }
+
+        /*******************/
+        /*   watch/listen  */
+        /*******************/
+        #watch-listen {
+            float: left;
+            margin-left: 20px;
+            width: 350px;
+        }
+
+        #watch-listen h4 {
+            font-weight: normal;
+            font-size: 20px;
+        }
+
+        .watch-listen-article-image
+        {
+            float:left;
+            width: 140px;
+            margin-right: 10px;
+        }
+
+        .watch-listen-link-1 {
+            text-decoration: none;
+            color:black;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .watch-listen-link-1:hover {
+            color: #1167A8
+        }
+
+        .watch-listen-clock {
+            width: 15px;
+            float: left;
+            margin-right: 12px;
+        }
+
+        .watch-listen-clock-text {
+            font-size: 15px;
+            color: #5A5A5A;
         }
 
     </style>
@@ -506,6 +558,7 @@
                     Security vulnerabilities that put customers at risk have affected Asda's website
                     for a couple of years, a security expret has revealed.
                 </p>
+
                 <p style="padding-bottom: 20px; padding-top:5px">
                     <img src="final_img/clock-symbol.png" alt="clock-symbol">
                     <span>
@@ -522,6 +575,21 @@
             </div>
 
             <img id="main-article-image" src="final_img/main-article-cover-ASDA.png" alt="ASDA">
+        </div>
+
+        <!-- NOT CLEARING RULES - IN ORDER TO STICK IT BY MAIN ARTICLE -->
+
+        <div id="watch-listen">
+            <h4>Watch/Listen</h4>
+
+            <img class="watch-listen-article-image" src="final_img/watch-listen/article1.png" alt="watch-listen-article-1">
+
+            <p><a class="watch-listen-link-1" href="" target="_blank">UK science chief backs blockchains</a></p>
+
+            <p style="padding-top:15px">
+                <img class="watch-listen-clock" src="final_img/clock-symbol.png" alt="clock-symbol">
+                <span class="watch-listen-clock-text">1 hour ago</span>
+            </p>
         </div>
     </div>
         

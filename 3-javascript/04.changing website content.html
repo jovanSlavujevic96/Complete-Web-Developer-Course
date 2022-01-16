@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>04.Changing Website Content</title>
+</head>
+<body>
+    <p id="firstParagraph">Hello Wolrd!</p>
+
+    <button id="firstButton">Change text</button>
+
+    <p id="secondParagraph">Javascript is ...</p>
+
+    <button id="secondButton">Append text</button>
+
+    <p id="thirdParagraph"></p> <!--BLANK PARAGRAPH-->
+
+    <button id="thirdButton">Generate text</button>
+
+    <script type="text/javascript">
+        /* change text */
+        document.getElementById("firstButton").onclick = function() {
+            document.getElementById("firstParagraph").innerHTML = "Hello Jovan!";
+        }
+
+        /* append text */
+        document.getElementById("secondButton").onclick = function() {
+            var p_2nd_content = document.getElementById("secondParagraph");
+            p_2nd_content.innerHTML = "I think " + p_2nd_content.innerHTML + " awesome!";
+        }
+
+        /* generate text -> change from blank to text */
+        document.getElementById("thirdButton").onclick = function() {
+            document.getElementById("thirdParagraph").innerHTML = "Hi there!";
+        }
+    </script>
+</body>
+</html>

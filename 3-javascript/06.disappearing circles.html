@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06.Disappearing Circles</title>
+
+    <style type="text/css">
+        .circle {
+            width:  200px;
+            height: 200px;
+            border-radius: 50%;
+            float: left;
+            margin: 50px;
+        }
+
+        #red-circle {
+            background-color: red;
+        }
+
+        #blue-circle {
+            background-color: blue;
+        }
+
+        #yellow-circle {
+            background-color: yellow;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div class="circle" id="red-circle"></div>
+    <div class="circle" id="blue-circle"></div>
+    <div class="circle" id="yellow-circle"></div>
+
+    <script type="text/javascript">
+        /* create array of circles */
+        var arr = 
+        [
+            document.getElementById("red-circle"), 
+            document.getElementById("blue-circle"),
+            document.getElementById("yellow-circle")
+        ];
+
+        /* create function => clicked button to dissapear */
+        function dissapear(item) {
+            item.onclick = function() {
+                item.style.display = "none";
+            }
+        }
+
+        /* apply function for every elemtn of array */
+        arr.forEach(item => dissapear(item));
+    </script>
+</body>
+</html>
