@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>08.Arrays</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var myArray = new Array(); // allocates array
+
+        myArray[0] = "pizza";
+        myArray[1] = "chocolate";
+
+        var tweets = [
+            "Morning everybody!", 
+            "I love coffee!"
+        ];
+
+        alert(myArray[0]);          // pop ups array element
+        console.log(myArray);       // prints whole array (only on console log)
+        console.log(myArray.length) // prints number of elements of array
+        alert(tweets[0]);           // pop ups array element
+
+        tweets.push("Back to work!"); // adds element to end of array
+        console.log(tweets[2]);
+
+        tweets.splice(
+            1 /* starting element position */, 
+            1 /* how much elements */
+        ); // removes element(s) from array
+        console.log(myArray);
+
+        tweets.splice(
+            1 /* starting element position */,
+            0 /* how much elements */,
+            "Cornflakes for breakfast!" /* new element */
+        ); // inserts element into array
+        console.log(myArray);
+
+        tweets.splice(
+            1 /* starting element position */,
+            1 /* how much elements */,
+            "Pancakes for dinner!" /* new element */
+        ); // replaces new element by existing on array
+        console.log(myArray); // array check
+    </script>
+</body>
+</html>

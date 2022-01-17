@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>10.How Many Fingers</title>
+</head>
+<body>
+    <p>How many fingers am I holding up?</p>
+    
+    <p>
+        <input type="text" id="guessInput">
+        <button id="guessButton">Guess!</button>
+    </p>
+
+    <script type="text/javascript">
+        /* random generator function */
+        const generateRandomNumber = (min,max) => {
+            return Math.floor(Math.random() * (max-min) + min);
+        }
+
+        var in_guess = document.getElementById("guessInput");
+
+        document.getElementById("guessButton").onclick = function() {
+            const random_fingers = generateRandomNumber(0,10);
+
+            if (Number(in_guess.value) == random_fingers) {
+                alert("You got it!")
+            }
+            else {
+                alert("You failed -> I'm holding " + String(random_fingers) + " fingers");
+            }
+        }
+    </script>    
+</body>
+</html>

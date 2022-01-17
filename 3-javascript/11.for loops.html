@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>11.For Loops</title>
+</head>
+<body>
+    <div id="tweetDiv"></div>
+
+    <script type="text/javascript">
+        var tweets = [
+            "Hi everyone!",
+            "I love cornglakes!",
+            "Night night :)",
+            "Sweet dreams!"
+        ]
+
+        var html_tweets_str = "";
+
+        for (var i=0; i<tweets.length; i++) {
+            // alert(tweets[i]);
+            html_tweets_str += '<p>' + tweets[i] + '</p>';
+        }
+
+        document.getElementById("tweetDiv").innerHTML = html_tweets_str;
+    </script>
+</body>
+</html>
