@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>12.While Loops</title>
+</head>
+<body>
+    <p>How many fingers are you holding up?</p>
+    
+    <p>
+        <select id="myNumber">
+            <option>0</option>
+
+            <option>1</option>
+
+            <option>2</option>
+
+            <option>3</option>
+
+            <option>4</option>
+
+            <option>5</option>
+        </select>
+        <button id="guess">Guess!</button>
+    </p>
+
+    <script type="text/javascript">
+        /* random generator function */
+        const generateRandomNumber = (min,max) => {
+            return Math.floor(Math.random() * (max-min) + min);
+        }
+
+        var in_myNum = document.getElementById("myNumber");
+        
+        document.getElementById("guess").onclick = function() {
+            var myNumber = in_myNum.value; 
+
+            var gotIt = false; /* computer has got it */
+            var guess = 0;
+            var numOfGuesses = 1;
+
+            while (gotIt == false) {
+                guess = generateRandomNumber(0,5);
+
+                if (guess == myNumber) {
+                    // Computer is correct
+
+                    gotIt = true;
+                    alert("Got it! It was a " + guess + ". It took me " + numOfGuesses + " guesses.");
+                }
+                else {
+                    // Computer is wrong
+
+                    numOfGuesses++;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
