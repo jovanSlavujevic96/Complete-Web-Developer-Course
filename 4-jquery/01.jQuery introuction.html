@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>01.jQuery Introduction</title>
+
+    <!-- HOW TO EMBED jQuery -->
+
+    <!-- OPTION 1 -->
+    <!-- WEB VERSION OF jQuery by google api's link -->
+    <!-- NOTE: THIS COULD BE UNSTABLE, SO IT WOULD BE WISE TO DO LOCAL VERSION OF jQuery -->
+    <!-- <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> -->
+
+    <!-- OPTION 2 -->
+    <!-- LOCAL VERSION OF jQuery -->
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    Hi there!
+
+    <script type="text/javascript">
+        if (typeof jQuery == "undefined") {
+            alert("jQuery is not installed!");
+        }
+        else {
+            alert("jQuery succesfully installed!");
+        }
+    </script>
+</body>
+</html>
