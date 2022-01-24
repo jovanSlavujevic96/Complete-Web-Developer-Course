@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reaction tester</title>
+
+    <style type="text/css">
+        #randomFigure {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Your Reactions!</h1>
+
+    <p>Click on the boxes and circles as quickly as you can!</p>
+
+    <p style="font-weight:bold">
+        <span>Your time: </span>
+        <span id="measuredTime"></span>
+    </p>
+
+    <div id="randomFigure"></div>
+
+    <script type="text/javascript">
+        var span_measurement = document.getElementById("measuredTime");
+        var div_randomFigure = document.getElementById("randomFigure");
+
+        const generateRandomNumber = (min,max) => {
+            return Math.floor(Math.random() * (max-min) + min);
+        }
+        function setValueToSpan(value) {
+            span_measurement.innerHTML = value;
+        }
+        function clearFigureDiv() {
+            div_randomFigure.style.removeProperty("border-radius");
+        }
+        function setColor(value) {
+            var str = "";
+            switch(value) {
+                case 1:
+                    str = "blue";
+                    break;
+                case 2:
+                    str = "yellow";
+                    break;
+                case 3:
+                    str = "green";
+                    break;
+                case 4:
+                    str = "orange";
+                    break;
+                case 5:
+                    str = "red";
+                    break;
+                default:
+                    str = "black";
+            }
+            div_randomFigure.style.backgroundColor = str;
+        }
+        function setFigureShape(value) {
+            if (value == 0) {
+                div_randomFigure.style.borderRadius = "50%";
+            }
+        }
+        function setFigureDimensions(value) {
+            div_randomFigure.style.width = value;
+            div_randomFigure.style.height = value;
+        }
+        function setPositioning(val_x, val_y) {
+            div_randomFigure.style.position = "relative";
+            div_randomFigure.style.left = val_x;
+            div_randomFigure.style.top = val_y;
+        }
+        function generateFigure() {
+            /**
+             * color 0 => black
+             * color 1 => blue
+             * color 2 => yellow
+             * color 3 => green
+             * color 4 => orange
+             * color 5 => red
+             */
+            const color = generateRandomNumber(0, 5);
+            /**
+             * shape 0 => circle
+             * shape 1 => square 
+             */
+            const shape = generateRandomNumber(0, 1);
+
+            /* value for width and height in px */
+            const w_h = generateRandomNumber(50, 100); /* value in px */
+
+            /* top and left relative positions in px */
+            const pos_x = generateRandomNumber(0, 100); /* relative position in px */
+            const pos_y = generateRandomNumber(0, 50);  /* relative position in px */
+
+            /* clear previous inputs */
+            clearFigureDiv();
+
+            /* set color */
+            setColor(color);
+
+            /* create figure shape */
+            setFigureShape(shape);
+
+            /*set figure dimensions */
+            setFigureDimensions(w_h);
+
+            /* set positioning */
+            setPositioning(pos_x, pos_y);
+        }
+
+        var startTime = 0;
+        var endTime   = 0;
+        var clicked   = false;
+
+        div_randomFigure.onclick = function() {
+            endTime = performance.now();
+            clicked = true;
+        }
+
+        clicked = false;
+        generateFigure();
+        startTime = performance.now();
+
+        // var duration = endTime - startTime;
+        // duration = duration / 1000;
+        // setValueToSpan(duration + 's');
+
+    </script>
+</body>
+</html>
