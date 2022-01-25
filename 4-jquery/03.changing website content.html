@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>03.Changing Website Content</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+        #circle {
+            width:  150px;
+            height: 150px;
+            background-color: green;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+
+    <!--
+    <p>This is some text.</p>
+    -->
+
+    <iframe src="https://codestars.com/"></iframe>
+
+    <script type="text/javascript">
+        $("#circle").click(function(){
+            /*
+            const previous = $("p").html(); // just get the content
+            $("p").html("This text has changed!"); // change the content
+            */
+        });
+
+        $("#circle").hover(function() {
+            $("iframe").attr("src", "https://www.google.com/webhp?igu=1");
+        });
+    </script>
+</body>
+</html>

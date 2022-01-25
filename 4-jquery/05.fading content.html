@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>05.Fading Content</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+        #circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: green;
+            margin: 10px;
+        }
+
+        .square {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p>THIS IS SOME TEXT</p>
+
+    <button id="fadeOut">Fade Out Text</button>
+
+    <p style="display:none">THIS IS SOME HIDDEN TEXT</p>
+
+    <button id="fadeIn">Fade In Text</button>
+
+    <p>
+        <p id="togglinTxt">THIS IS SOME TOGGLING TEXT</p>
+        <button id="togglinBtn">TOGGLE TEXT</button>
+    </p>
+    <script type="text/javascript">
+        $("#fadeOut").click(function() {
+            $("p").fadeOut("slow");
+        });
+
+        $("#fadeIn").click(function() {
+            $("p").fadeIn("slow");
+        });
+
+        $("#togglinBtn").click(function() {
+            if ($("#togglinTxt").css('display') != "none") {
+                $("#togglinTxt").fadeOut("slow");
+            }
+            else {
+                $("#togglinTxt").fadeIn("slow");
+            }
+            fadeOut = !fadeOut;
+        });
+    </script>
+</body>
+</html>

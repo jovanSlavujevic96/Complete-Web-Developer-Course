@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>07.AJAX</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <p>
+        <input id="txtFileInput" type="text" placeholder="Enter text file name">
+        <button id="txtFileSubmit">Submit</button>
+    </p>
+    <p id="outPar"></p>
+
+    <script type="text/javascript">
+        var jQr_inTxt = $("#txtFileInput");
+        var jQr_parOut = $("#outPar");
+
+        $("#txtFileSubmit").click(function() {
+            /* get value from input HTML object */
+            const fileName = jQr_inTxt.val();
+            if (fileName == "") {
+                alert("You entered a empty filename!");
+                return;
+            }
+
+            /* read from file and do function with readen dana */
+            /*
+            // NOTE: If there is bad fileName it drops some generic strange error
+            $.get(fileName, function(data) {
+                alert(data);
+            });
+            */
+
+            /* Better solution -> ERROR HANDLING */
+            $.ajax(fileName).done(function(data) {
+                jQr_parOut.html(data);
+            }).fail(function() {
+                alert("Could not get data!");
+            });
+        });
+    </script>
+</body>
+</html>

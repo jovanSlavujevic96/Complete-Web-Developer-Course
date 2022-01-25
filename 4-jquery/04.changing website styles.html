@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>04.Changin Website Styles</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+
+    <style type="text/css">
+        #circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: green;
+            margin: 10px;
+        }
+
+        .square {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="circle"></div>
+
+    <div class="square"></div>
+    <div class="square"></div>
+
+    <script type="text/javascript">
+        $("#circle").click(function(){
+            $("#circle").css("width", "400px");
+            $("#circle").css("background-color", "red");
+
+            alert($("body").css("width"));
+        });
+
+        /* how to make all div objects dissapear on click */
+        $("div").click(function() {
+            var thisObj = $(this);
+
+            var objectName = thisObj.attr("id");
+            if (objectName == null) {
+                objectName = thisObj.attr("class");
+            }
+
+            alert("You clicked on a " + objectName);
+            thisObj.css("display", "none");
+        });
+
+    </script>
+</body>
+</html>
