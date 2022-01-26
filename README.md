@@ -13,6 +13,12 @@ This repository refers to attending the Udemy course <a href="https://www.udemy.
         </a>
     </li>
     <li>
+        Color Catcher Plugin
+        <a href="https://www.colorzilla.com/" alt="_blanl">
+            (ColorZilla)
+        </a>
+    </li>
+    <li>
         Code Editor
         <a href="https://code.visualstudio.com/download" alt="_blank">
             (Visual Studio Code)
@@ -24,9 +30,21 @@ This repository refers to attending the Udemy course <a href="https://www.udemy.
             (XAMPP)
         </a>
     </li>
+    <li>
+        JS Framework
+        <a href="https://jquery.com/download/" alt="_blank">
+            (jQuery)
+        </a>
+    </li>
+    <li>
+        JS Framework
+        <a href="https://jqueryui.com/" alt="_blank">
+            (jQuery UI)
+        </a>
+    </li>
 </ul>
 
-<p>How to install server program XAMPP <a href="https://www.youtube.com/embed/mXdpCRgR-xE" alt="_blank">video</a></p>
+How to install server program XAMPP <a href="https://www.youtube.com/embed/mXdpCRgR-xE" alt="_blank">video</a>
 
 ## Subjects
 <ol>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>08.Regular Expressions - regex</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <script type="text/javascript">
+        var string = "Regex is great!";
+
+        var regex = /is/;  /* put key word between slash signs */
+        var result = string.match(regex);
+
+        /* print the result */
+        alert("1." + result);
+
+        regex = /isk/;
+        result = string.match(regex);
+
+        alert("2." + result); /* returns null */
+
+        regex = /Great/i; /* keys insensitive search*/
+        result = string.match(regex);
+
+        alert("3." + result);
+
+        regex = /e/g; /* how many times is there 'i' */
+        result = string.match(regex);
+
+        alert("4." + result);
+    </script>
+</body>
+</html>

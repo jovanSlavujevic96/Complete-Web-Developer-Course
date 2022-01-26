@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>11.Draggables & Resizables</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui-1.13.1/jquery-ui.js"></script>
+    <link href="jquery-ui/jquery-ui-1.13.1/jquery-ui.css" rel="stylesheet">
+
+    <style type="text/css">
+        #vert-draggable {
+            background-color: darksalmon;
+            font-weight: bold;
+            width:150px;
+            border: 2px darkred solid;
+        }
+
+        #horz-draggable {
+            background-color: lightseagreen;
+            font-weight: bold;
+            width:150px;
+            border: 2px green solid;
+        }
+
+        #parent-div-rules {
+            margin-top: 5px;
+            width:400px;
+            height:300px;
+            background-color: yellow;
+            margin-bottom: 5px;
+        }
+
+        #resizable {
+            width:100px;
+            height: 100px;
+            background-color: blue;
+        }
+
+        #also-resizable {
+            width:100px;
+            height: 100px;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div id="vert-draggable">DRAG ME VERTICALLLY!</div>
+    <div id="horz-draggable">DRAG ME HORIZONTALLY!</div>
+
+    <div id="parent-div-rules">
+        <span>I'm stuck in the box!</span>
+    </div>
+
+    <div id="resizable"></div>
+    <div id="also-resizable"></div>
+
+    <script type="text/javascript">
+        /* make text draggable only vertically -> up & down */
+        $("#vert-draggable").draggable({ axis: "y"});
+
+        /* make text draggable only horizontally -> left & right */
+        $("#horz-draggable").draggable({ axis: "x"});
+
+        /* make text draggable in scope of the parent HTML object */
+        $("span").draggable({containment: "parent"});
+
+        /* more about draggable here -> https://api.jqueryui.com/draggable/ */
+
+        /* make HTML object resizable */
+        $("#resizable").resizable({
+            grid:50,                        /* 50px grid */
+            alsoResize:"#also-resizable",   /* following object will be resized */
+            resize: function(event,ui) {    /* following function during resize */
+                if ($("#resizable").width() > 1000) {
+                    alert("Big enough!");
+                }
+            }
+        });
+
+        $("#also-resizable").resizable();
+    </script>
+</body>
+</html>
