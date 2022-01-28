@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>13.Accordion & Sortables</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui-1.13.1/jquery-ui.js"></script>
+
+    <link href="jquery-ui/jquery-ui-1.13.1/jquery-ui.css" rel="stylesheet">
+
+    <style type="text/css">
+       
+    </style>
+</head>
+<body>
+    <!-- ACCORDION -->
+    <div id="accordion">
+        <h3>Title</h3>
+
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare felis sit amet neque eleifend, ac volutpat eros laoreet. Nulla facilisi. Donec non auctor purus, ullamcorper vulputate nibh. Sed a mi id magna molestie molestie. Mauris hendrerit, mi non finibus porta, velit nibh bibendum quam, et suscipit ex dolor eget massa. Suspendisse ut malesuada leo. In malesuada interdum erat ultrices pellentesque.</p>
+        </div>
+
+        <h3>Title</h3>
+
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare felis sit amet neque eleifend, ac volutpat eros laoreet. Nulla facilisi. Donec non auctor purus, ullamcorper vulputate nibh. Sed a mi id magna molestie molestie. Mauris hendrerit, mi non finibus porta, velit nibh bibendum quam, et suscipit ex dolor eget massa. Suspendisse ut malesuada leo. In malesuada interdum erat ultrices pellentesque.</p>
+        </div>
+
+        <h3>Title</h3>
+
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare felis sit amet neque eleifend, ac volutpat eros laoreet. Nulla facilisi. Donec non auctor purus, ullamcorper vulputate nibh. Sed a mi id magna molestie molestie. Mauris hendrerit, mi non finibus porta, velit nibh bibendum quam, et suscipit ex dolor eget massa. Suspendisse ut malesuada leo. In malesuada interdum erat ultrices pellentesque.</p>
+        </div>
+
+        <h3>Title</h3>
+
+        <div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ornare felis sit amet neque eleifend, ac volutpat eros laoreet. Nulla facilisi. Donec non auctor purus, ullamcorper vulputate nibh. Sed a mi id magna molestie molestie. Mauris hendrerit, mi non finibus porta, velit nibh bibendum quam, et suscipit ex dolor eget massa. Suspendisse ut malesuada leo. In malesuada interdum erat ultrices pellentesque.</p>
+        </div>
+    </div>
+
+    <!-- SORTABLE - you can drag list items and sort them -->
+    <ul id="sortable">
+        <li>Rob</li>
+        <li>Kirsten</li>
+        <li>Tommy</li>
+        <li>Ralphie</li>
+    </ul>
+
+    <script type="text/javascript">
+       $("#accordion").accordion();
+
+       $("#sortable").sortable();
+    </script>
+</body>
+</html>

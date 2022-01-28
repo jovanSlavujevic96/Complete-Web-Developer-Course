@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>12.Droppables</title>
+
+    <script type="text/javascript" src="jquery/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="jquery-ui/jquery-ui-1.13.1/jquery-ui.js"></script>
+
+    <link href="jquery-ui/jquery-ui-1.13.1/jquery-ui.css" rel="stylesheet">
+
+    <style type="text/css">
+         #little-square {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+         }
+
+         #big-square {
+            width: 300px;
+            height: 300px;
+            background-color: blue;
+         }
+    </style>
+</head>
+<body>
+    <!--
+    * Little challenge
+    *
+    * little square and big square
+    * two different colors
+    * make it so you can drag a little sqaure around
+    * when you drop it into big square you get an alert
+    -->
+        
+    <div id="little-square"></div>
+    <div id="big-square"></div>
+
+    <script type="text/javascript">
+        $("#little-square").draggable();
+
+        $("#big-square").droppable({
+            drop: function(event, ui) {
+                alert('Dropped');
+            }
+        });
+    </script>
+</body>
+</html>
