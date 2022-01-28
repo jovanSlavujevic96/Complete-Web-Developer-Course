@@ -61,6 +61,27 @@
         .highlitedButton {
             background-color: grey;
         }
+
+        textarea {
+            resize: none;
+            border-top: none;
+            border-color: grey;
+        }
+
+        .panel {
+            float: left;
+            width: 50%;
+            border-left: none;
+        }
+
+        iframe {
+            border: none;
+        }
+
+        .hidden {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -69,14 +90,33 @@
     
         <div id="buttonContainer">
             <div class="toggleButton active" id="html">HTML</div>
-            <div class="toggleButton">CSS</div>
-            <div class="toggleButton">JavaScript</div>
+            <div class="toggleButton" id="css">CSS</div>
+            <div class="toggleButton" id="js">JavaScript</div>
             <div class="toggleButton active" id="output">Output</div>
         </div>
     </div>
 
+    <div id="bodyContainer">
+        <textarea class="panel" id="htmlPanel"><p id="parId">Hello World!</p></textarea>
+
+        <textarea class="panel hidden" id="cssPanel">p {color: green; }</textarea>
+
+        <textarea class="panel hidden" id="jsPanel">
+document.getElementById("parId").style.fontSize = "50px";
+document.getElementById("parId").style.fontWeight = "bold";
+        </textarea>
+
+        <iframe   class="panel" id="outputPanel"></iframe>
+    </div>
+
     <script type="text/javascript">
-        /* setting up toggle button(s) */
+        function updateOutput() {
+            $("iframe").contents().find("html").html("<html><head><style type='text/css'>" + 
+                $("#cssPanel").val() + "</style><head><body>" + $("#htmlPanel").val() + "</body></html>");
+
+            document.getElementById('outputPanel').contentWindow.eval($("#jsPanel").val());
+        }
+
         $(".toggleButton").hover(
             function() {
                 $(this).addClass("highlitedButton");
@@ -88,7 +128,23 @@
         $(".toggleButton").click(function() {
             $(this).toggleClass("active")
             $(this).removeClass("highlitedButton");
-        })
+
+            var panelId = $(this).attr("id") + "Panel";
+            $('#' + panelId).toggleClass("hidden");
+
+            var numberOfActivePanels = 4 - $('.hidden').length;
+            $(".panel").width(($(window).width() / numberOfActivePanels)-10);
+        });
+
+        $("textarea").height($(window).height() - $("#header").height() - 30);
+
+        $(".panel").width(($(window).width() / 2) - 10);
+
+        updateOutput();
+
+        $("#htmlPanel").on('change keyup paste', function() {
+            updateOutput();
+        });
     </script>
 </body>
 </html>
