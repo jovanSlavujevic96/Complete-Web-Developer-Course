@@ -1,0 +1,181 @@
+<!-- BOOTSTRAP VERSION v4.6 -->
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+    <style type="text/css">
+        .jumbotron {
+            background-image: url(final_img/background.jpg);
+            text-align: center;
+        }
+
+        #email {
+            width: 300px;
+        }
+
+        #appSummary {
+            text-align: center;
+        }
+
+        .card-img-top {
+            width: 100%;
+            height: 265px;
+        }
+
+        .card-body p{
+            text-align: justify;
+            text-justify: inter-word;
+        }
+
+        .timestamp-styling {
+            width: 100%;
+            height: 50px;
+            float: bottom;
+            vertical-align: middle;
+        }
+
+        .timestamp-styling p {
+            height: 100%;
+            width: 100%;
+            margin: 0px;
+            display: table-cell;
+            vertical-align: middle;
+            padding: 10px 18px;
+            float: bottom;
+        }
+    </style>
+
+    <title>App Landing Page - Final Bootstrap Project</title>
+</head>
+<body>
+    <!-- NAVBAR: https://getbootstrap.com/docs/4.0/components/navbar/ -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand border border-dark bg-success rounded-pill" href="#" style="padding: 5px">
+            <strong>HappyLeaf&#127808;</strong> App
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Download the App</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- JUMBOTRON: https://getbootstrap.com/docs/4.0/components/jumbotron/ -->
+    <div class="jumbotron text-info">
+        <h1 class="display-4">HappyLeaf&#127808;</h1>
+        <p class="lead">
+            This is why YOU should download this fantastic app!
+        </p>
+        <hr class="my-4 border-info">
+        <p>
+            Want to know more? Joing our mailing list!
+        </p>
+
+        <!-- FORMS : https://getbootstrap.com/docs/4.0/components/forms/ -->
+        <form class="form-inline justify-content-center">
+            <label class="sr-only" for="email">E-mail address</label>
+            <div class="input-group mb-2 mr-sm-2">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">@</div>
+                </div>
+                <input type="email" class="form-control" id="email" placeholder="Your E-mail">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Sing up</button>
+        </form>
+    </div>
+
+    <div class="container" id="appSummary">
+        <h1>Why is this app awesome!?</h1>
+        <p class="lead">Summary, once again, of your app's awesomeness</p>
+    </div>
+
+    <!-- CARDS: https://getbootstrap.com/docs/4.0/components/card/ -->
+    <div class="container">
+        <form class="card-deck">
+            <div class="card">
+                <img class="card-img-top" src="final_img/card1.jpg" alt="Card 1">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fa fa-leaf" aria-hidden="true"></i>
+                        Awesome images
+                    </h5>
+                    <p class="card-text">
+                        This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+                    </p>
+                </div>
+                <div class="bg-light timestamp-styling">
+                    <p>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <small class="text-muted">23 mins ago</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="final_img/card2.jpg" alt="Card 2">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fa fa-leaf" aria-hidden="true"></i>
+                        Increase of social avereness
+                    </h5>
+                    <p class="card-text">
+                        This card has supporting text below as a natural lead-in to additional content.
+                    </p>
+                </div>
+                <div class="bg-light timestamp-styling">
+                    <p>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <small class="text-muted">3 hours ago</small>
+                    </p>
+                </div>
+            </div>
+
+            <div class="card">
+                <img class="card-img-top" src="final_img/card3.jpg" alt="Card 3">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <i class="fa fa-leaf" aria-hidden="true"></i>
+                        Beautiful landscapes
+                    </h5>
+                    <p class="card-text">
+                        This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+                    </p>
+                </div>
+                <div class="bg-light timestamp-styling">
+                    <p>
+                        <i class="fa fa-clock-o" aria-hidden="true"></i>
+                        <small class="text-muted">6 days ago</small>
+                    </p>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <!-- jQuery and Bootstrap Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+</body>
+</html>
