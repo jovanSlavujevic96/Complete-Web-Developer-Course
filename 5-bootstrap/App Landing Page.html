@@ -25,6 +25,8 @@
 
         #appSummary {
             text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
         }
 
         .card-img-top {
@@ -41,13 +43,38 @@
             height: 60% !important;
             width: 100% !important;
         }
+
+        #appStoreIcon {
+            width: 200px;
+            text-align: right !important;
+            float:right;
+        }
+
+        #footer {
+            background-color: aqua;
+            padding: 150px 0px;
+            margin-top:  150px;
+            text-align: left;
+        }
+
+        /* for scroll spy */
+        body {
+            position: relative;;
+        }
+
+        .col-height {
+            height: 100px;
+        }
     </style>
 
     <title>App Landing Page - Final Bootstrap Project</title>
 </head>
-<body>
+
+<!-- for scroll spy -->
+<body data-spy="scroll" data-target="#navbar" data-offset="150">
+
     <!-- NAVBAR: https://getbootstrap.com/docs/4.0/components/navbar/ -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <a class="navbar-brand border border-dark bg-success rounded-pill" href="#" style="padding: 5px">
             <strong>HappyLeaf&#127808;</strong> App
         </a>
@@ -58,21 +85,23 @@
     
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="#jumbotron">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                    <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Download the App</a>
+                    <a class="nav-link" href="#footer">Download the App</a>
                 </li>
             </ul>
         </div>
     </nav>
 
+    <div class="bg-light" style="padding-top: 50px"></div>
+
     <!-- JUMBOTRON: https://getbootstrap.com/docs/4.0/components/jumbotron/ -->
-    <div class="jumbotron text-info">
+    <div id="jumbotron" class="jumbotron text-info">
         <h1 class="display-4">HappyLeaf&#127808;</h1>
         <p class="lead">
             This is why YOU should download this fantastic app!
@@ -101,7 +130,7 @@
     </div>
 
     <!-- CARDS: https://getbootstrap.com/docs/4.0/components/card/ -->
-    <div class="container">
+    <div id="about" class="container">
         <form class="card-deck">
             <div class="card">
                 <img class="card-img-top" src="final_img/card1.jpg" alt="Card 1">
@@ -160,6 +189,31 @@
                 </div>
             </div>
         </form>
+    </div>
+
+    <div style="margin-top: 50px"></div>
+
+    <!-- FOOTER TO DOWNLOAD THE APP -->
+    <div id="footer">
+        <div class="container" style="margin: 0 auto;">
+            <div class="row align-middle">
+                <div class="col-sm-6 col-height align-middle">
+                    <h2>Download the app!</h2>
+                    
+                    <blockquote class="blockquote">
+                        <p class="mb-0">Really, why should I download this app?</p>
+                        <footer class="blockquote-footer">Said <cite title="Source Title">nobody</cite> never</footer>
+                    </blockquote>
+                </div>
+                <div class="col-sm-6 col-height align-middle">
+                    <p>
+                        <a href="https://www.apple.com/app-store/" target="_blank">
+                            <img id="appStoreIcon" src="final_img/app-store-icon.png" alt="app-store-icon">
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- jQuery and Bootstrap Bundle (includes Popper) -->
