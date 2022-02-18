@@ -1,5 +1,5 @@
 <?php
-    /*
+    /**
      * e.g.
      * https://www.CompleteWebDeveloperCourse.com/7-php/?name=rob&password=1234&gender=male
      *
@@ -10,11 +10,14 @@
      * 
      * We can print them like this
      * print_r($_GET);
-     */
+    **/
+    $number = null;
+    if ($_GET && $_GET['number']) {
+        $number = $_GET['number'];
+    }
 
-    $number = $_GET['number'];
     // check is passed var a positive round number
-    if (is_numeric($number) && $number > 0 && $number == round($number, 0)) {
+    if ($number != null && is_numeric($number) && $number > 0 && $number == round($number, 0)) {
         $i = 2;
         $isPrime = true;
 
