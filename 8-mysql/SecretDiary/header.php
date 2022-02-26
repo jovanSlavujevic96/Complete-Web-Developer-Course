@@ -16,6 +16,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+
     <title>Secret Diary</title>
 
     <style type="text/css">
@@ -24,12 +29,16 @@
             -webkit-background-size: cover;
             -moz-backgrdoun-size: cover;
             -o-backgrdoun-size: cover;
+            margin: 0;
         }
 
         body {
             background: none;
             color: white;
+            margin: 0;
+        }
 
+        .middle-center {
             /* iii VERTICAL CENTER !!! */
             display:flex;
             flex-direction:column;
@@ -43,7 +52,7 @@
             height: 100%;
         }
 
-        #logInForm {
+        #signUpForm {
             display: none; /* hidden */
         }
 
@@ -57,6 +66,17 @@
             color: blue !important;
             text-decoration: underline !important;
         }
+
+        #diary {
+            margin: 2% 0%;
+            width: 100%;
+            height: 80vh;
+        }
+
+        .nice-font {
+            font-family: 'Dancing Script', cursive;
+        }
+
     </style>
 </head>
 <body>

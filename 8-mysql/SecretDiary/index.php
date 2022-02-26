@@ -2,32 +2,22 @@
     session_start();
 
     $error = "";
+    $alert = "danger";
 
-    if (array_key_exists('logout', $_GET)) {
+    if (array_key_exists('logout', $_GET) AND $_GET['logout'] == '1') {
         // delete cookies and sessions during logout
         unset($_SESSION);
         setcookie("id", "", time() - 60*60);
         $_COOKIE['id'] = "";
     }
-    else if ((array_key_exists('id', $_SESSION) AND $_SESSION['id']) OR 
-             (array_key_exists('id', $_COOKIE)  AND $_COOKIE['id'])) {
+    else if ((array_key_exists('id', $_SESSION) AND $_SESSION['id'] != "") OR 
+             (array_key_exists('id', $_COOKIE)  AND $_COOKIE['id']  != "")) {
         // redirect to logged in page
         header("Location: loggedinpage.php");
     }
 
     if (array_key_exists('submit', $_POST)) {
-        $link = null;
-        try {
-            $link = mysqli_connect("localhost", "root", "root", "udemy_exercise");
-        }
-        catch (Exception $e) {
-            die ("Database connection error.");
-        }
-
-        /* double check */
-        if (mysqli_connect_error()) {
-            die ("Database connection error.");
-        }
+        include("connection.php");
 
         if (!$_POST['email']) {
             $error .= "An email address is required<br>";
@@ -38,7 +28,7 @@
         }
 
         if ($error != "") {
-            $error = "<p>There were error(s) in your form:</p>".$error;
+            $error = '<p>There were error(s) in your form:</p>'.$error;
         }
         else {
             /***********SIGN UP***********/
@@ -49,7 +39,8 @@
                 $result = mysqli_query($link, $query);
                 
                 if (mysqli_num_rows($result) > 0) {
-                    $error = "That email address is taken";
+                    $error = 'That email address is taken';
+                    $alert = "warning";
                 }
                 else {
                     $query = "INSERT INTO `users_final` (`email`,`password`) VALUES('".
@@ -57,7 +48,7 @@
                     mysqli_real_escape_string($link, $_POST['password'])."')";
 
                     if (!mysqli_query($link, $query)) {
-                        $error ="<p>Could not sign you up - please try again later.</p>";
+                        $error = 'Could not sign you up - please try again later.';
                     }
                     else {
                         // Sign up successful
@@ -83,7 +74,7 @@
             }
             /************LOG IN***********/
             else {
-                $error = "That email/password combination could not be found.";
+                $error = 'That email/password combination could not be found.';
 
                 $query = "SELECT * FROM `users_final` WHERE email = '".
                     mysqli_real_escape_string($link, $_POST['email'])."'";
@@ -92,7 +83,7 @@
                 $row = mysqli_fetch_array($result);
                 if (isset($row) AND array_key_exists("id", $row)) {
                     $hashedPassword = md5(md5($row['id']).$_POST['password']);
-                    if ($hashedPassword == $row['password']) {
+                    if (($_POST['email'] == $row['email']) AND ($hashedPassword == $row['password'])) {
                         $_SESSION['id'] = $row['id'];
                         if (array_key_exists('stayLoggedIn', $_POST)) {
                             setcookie("id", $row['id'], time() + 60*60*24*365);
@@ -105,12 +96,16 @@
             }
             /**********************************/
         }
+        // format potential error(s)
+        if ($error != "") {
+            $error = '<div class="alert alert-'.$alert.'" role="alert">'.$error.'</div>';
+        }
     }
 ?>
 
 <?php include("header.php") ?>
 
-<div class="container">
+<div class="container middle-center">
     <h1>Secret Diary</h1>
 
     <p><strong>Store your thoughts permanently and securely</strong></p>
