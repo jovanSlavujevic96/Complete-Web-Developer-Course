@@ -37,7 +37,7 @@
             $.ajax({
                 method: "POST",
                 url: "updatedatabase.php",
-                data: {content: $("#diary").val()}
+                data: {content: $("#diary").val()},
                 error: function() {
                     alert("Error during the update");
                 }
