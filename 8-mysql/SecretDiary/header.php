@@ -1,3 +1,9 @@
+<!--
+    THIS PART IS COMMON FOR ALL PAGES:
+    index.php
+    loggedinpage.php
+-->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -42,11 +48,11 @@
         }
 
         /* for some reason it must be !important -> it ignores class text color, but does it for id */
-        .show-toggle-form {
+        .show-form {
             font-weight: bold;
             color: lightblue !important;
         }
-        .show-toggle-form:hover {
+        .show-form:hover {
             cursor: pointer;
             color: blue !important;
             text-decoration: underline !important;

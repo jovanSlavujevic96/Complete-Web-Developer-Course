@@ -136,7 +136,7 @@
             <input type="hidden" name="signUp" value="1">
             <input class="btn btn-success" name="submit" type="submit" value="Sign Up!">
         </fieldset>
-        <p><a class="show-toggle-form">Log In</a></p>
+        <p><a class="show-form toggle-form">Log In</a></p>
     </form>
 
     <form method="post" id="logInForm">
@@ -156,7 +156,7 @@
             <input type="hidden" name="signUp" value="0">
             <input class="btn btn-success" name="submit" type="submit" value="Log In!">
         </fieldset>
-        <p><a class="show-toggle-form">Sign Up</a></p>
+        <p><a class="show-form toggle-form">Sign Up</a></p>
     </form>
 </div>
 
