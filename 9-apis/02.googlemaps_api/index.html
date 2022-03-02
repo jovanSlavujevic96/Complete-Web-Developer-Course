@@ -1,0 +1,28 @@
+<!-- ACCESS TO API KEY / CREDENTIALS -->
+<!-- https://console.cloud.google.com/apis/credential -->
+
+<!-- GOOGLE MAPS HELLO WORDL EXAMPLE -->
+<!-- https://developers.google.com/maps/documentation/javascript/overview -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <link type="text/css" rel="stylesheet" href="./map_styles.css">
+</head>
+<body>
+    <div id="map"></div>
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <script type="text/javascript" src=
+    "<?php
+        include ('key_reader.php');
+        echo $link;
+    ?>" async defer></script>
+
+    <script type="text/javascript" src="./map_scripts.js"></script>
+</body>
+</html>
