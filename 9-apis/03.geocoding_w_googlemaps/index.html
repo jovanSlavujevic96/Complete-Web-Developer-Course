@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title>Geocoding An Address</title>
+    </head>
+    <body>
+        <p>Country is <strong id="country"></strong></p>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script type="text/javascript">
+            function GetGeocode(geocode_api_link) {
+                $.ajax({
+                    url: geocode_api_link,
+                    type: "GET",
+                    success: function(data) {
+                        $.each(data['results'][0]['address_components'], function(key, val) {
+                            if (val['types'][0] == "country") {
+                                $("#country").html($("#country").html() + val['long_name'] + ", " + val['short_name'] + '<br>');
+                            }
+                        });
+                    },
+                });
+            }
+
+            function GetApiKey(geocode_api_link) {
+                /* get API key from key_reader.php */
+                $.ajax({
+                    url: "../02.googlemaps_api/key_reader.php?echo=1",
+                    type: "GET",
+                    error: function() {
+                        die("Error on getting GEOCODE API KEY");
+                    },
+                    success: function(data) {
+                        geocode_api_link += data;
+                        GetGeocode(geocode_api_link);
+                    },
+                });
+            }
+
+            GetApiKey("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=");
+        </script>
+    </body>
+</html>
