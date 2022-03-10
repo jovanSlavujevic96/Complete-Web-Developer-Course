@@ -1,0 +1,49 @@
+html {
+    background: url(worldmap.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    zoom: 200%;
+}
+
+body {
+    background: none;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+    width: 550px;
+}
+
+input {
+    margin: 20px;
+}
+
+.my-smooch-font {
+    color: white;
+    font-family: 'Shadows Into Light', cursive;
+    text-decoration: underline;
+    text-decoration-color: red;
+}
+
+.my-dancing-font {
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+.my-input-border {
+    border: red 3px solid;
+}
+
+#mySubmit {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+#myOutput {
+    width: 200px;
+    height: 50px;
+    margin: 0 auto;
+}
