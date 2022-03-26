@@ -1,3 +1,5 @@
+var postal_code = "";
+
 function GetPostalCode(city_name) {
     $.ajax({
         url: "get_postal_code.php?city="+city_name,
@@ -29,4 +31,11 @@ $('#mySubmit').click(function(){
 
         GetPostalCode(entered_city);
     }
+});
+
+$(document).ready(function() {
+    //clear on focus
+    $('#myCityInput').focus(function() {
+        $('#myCityInput').val("");
+    });
 });

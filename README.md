@@ -48,6 +48,24 @@ This repository refers to attending the Udemy course <a href="https://www.udemy.
             (Bootstrap)
         </a>
     </li>
+    <li>
+        <a href="https://wordpress.org/" alt="_blank">Wordpress</a>
+    </li>
+    <li>
+        Local HOST service
+        <a href="https://www.apachefriends.org/index.html" alt="_blank">
+            XAMPP
+        </a>
+        (Apache + MariaDB + PHP + Perl + MySQL)
+    </li>
+    <li>
+        Mobile Apps framewrok
+        <a href="https://code.kik.com/app/2/" alt="_blanl">App.js</a>
+    </li>
+    <li>
+        Deploying tool for multiple platforms
+        <a href="https://build.phonegap.com" alt="_blank">Adobe PhoneGap Build</a>
+    </li>
 </ul>
 
 How to install server program XAMPP <a href="https://www.youtube.com/embed/mXdpCRgR-xE" alt="_blank">video</a>
@@ -58,4 +76,9 @@ How to install server program XAMPP <a href="https://www.youtube.com/embed/mXdpC
     <li>Fundamentals of CSS </li>
     <li>Fundamentals of JS  </li>
     <li>jQuery JS framework </li>
+    <li>Bootstrap CSS/JS framework</li>
+    <li>Wordpress</li>
+    <li>PHP backend language</li>
+    <li>MYSQL database</li>
+    <li>APIs: Google, Twitter, etc.</li>
 </ol>
